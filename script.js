@@ -21,20 +21,19 @@ fetch("https://api.quran.sutanlab.id/surah")
         .insertAdjacentHTML("beforeend", html);
     }
   });
-
 let container = document.querySelector(".container");
 container.addEventListener("click", function (e) {
   const btn = e.target;
-  if (!btn.classList.contains("listen")) {return};
+  console.log(btn);
+  if (!btn.classList.contains("listen")) return;
   console.log("helo");
   const num = +btn.id;
-
-  // fetch(`https://api.quran.sutanlab.id/surah/${num}`)
-  //   .then(function (response) {
-  //     return response.json();
-  //   })
-  //   .then(function (res) {
-  //     let data2 = res;
-  //     console.log(data2);
-  //   });
+  fetch(`https://api.quran.sutanlab.id/surah/${num}`)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (res) {
+      let data2 = res;
+      console.log(data2);
+    });
 });
