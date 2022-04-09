@@ -33,7 +33,7 @@ container.addEventListener("click", function (e) {
       return response.json();
     })
     .then(function (res) {
-      let data2 = res;
-      console.log(data2);
+      let daTa = res;
+      console.log(daTa);
     });
 });
