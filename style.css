@@ -8,7 +8,7 @@ html {
 }
 body {
   font-family: serif;
-  background-color: #eee;
+  background-color: #ddd;
 }
 .img {
   width: 100%;
@@ -68,17 +68,24 @@ p {
   cursor: pointer;
 }
 .popup {
-  padding: 3rem;
-  width: 100%;
-  background-color: rgba(51, 51, 51, 0.794);
-}
-.child {
-  width: 90%;
-  height: 100%;
+  height: 100vh;
+  padding: 2rem;
+  border-radius: 1rem;
   margin: 0 auto;
   background-color: rgb(254, 221, 219);
   position: relative;
   overflow-y: scroll;
+  box-shadow: 0.5rem 0.5rem 1rem #333;
+}
+.popup::-webkit-scrollbar-thumb {
+  background-color: black;
+}
+.color {
+  background-image: linear-gradient(
+    to right bottom,
+    rgb(254, 221, 219),
+    rgb(254, 221, 219)
+  );
 }
 .close {
   position: absolute;
@@ -87,8 +94,10 @@ p {
   font-size: 3rem;
   padding: 1rem;
   border-radius: 50%;
-  background-color: aqua;
+  background-color: black;
   z-index: 10;
+  color: rgb(254, 221, 219);
+  
 }
 .text {
   padding: 3rem 0.5rem;
@@ -127,8 +136,12 @@ p {
 .grid {
   display: grid;
   grid-template-columns: 1fr 3fr;
+  padding: 2rem;
 }
 .gridcol {
   display: grid;
   grid-template-columns: 1fr;
+  padding: 0;
+  height: 100vh;
+  overflow-y: scroll;
 }
