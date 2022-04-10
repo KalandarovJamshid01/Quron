@@ -97,7 +97,6 @@ p {
   background-color: black;
   z-index: 10;
   color: rgb(254, 221, 219);
-  
 }
 .text {
   padding: 3rem 0.5rem;
@@ -144,4 +143,7 @@ p {
   padding: 0;
   height: 100vh;
   overflow-y: scroll;
+}
+.btnCol {
+  color: rgb(254, 221, 219);
 }
