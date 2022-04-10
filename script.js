@@ -81,19 +81,3 @@ container.addEventListener("click", function (e) {
         });
     });
 });
-// fetch(`http://api.alquran.cloud/v1/surah/114/uz.sodik`)
-//   .then(function (response) {
-//     return response.json();
-//   })
-//   .then(function (res) {
-//     let daTa = res;
-//     console.log(daTa);
-//   });
-// fetch(`https://api.alquran.cloud/v1/surah/108/uz.sodik`)
-//   .then(function (response) {
-//     return response.json();
-//   })
-//   .then(function (res) {
-//     let daTa = res;
-//     console.log(daTa.text);
-//   });
