@@ -1,10 +1,13 @@
+let container = document.querySelector(".container");
+let big = document.querySelector(".big");
+
 fetch("https://api.quran.sutanlab.id/surah")
   .then(function (response) {
     return response.json();
   })
   .then(function (res) {
     let data = res.data;
-    // console.log(daTa);
+    // console.log(data);
     for (let i = 0; i < data.length; i++) {
       let html = `
     <div class="sura">
@@ -21,14 +24,13 @@ fetch("https://api.quran.sutanlab.id/surah")
         .insertAdjacentHTML("beforeend", html);
     }
   });
-let container = document.querySelector(".container");
 container.addEventListener("click", function (e) {
   const btn = e.target;
   if (!btn.classList.contains("listen")) return;
   console.log("helo");
   const num = +btn.id;
   let html1, htm2;
-  fetch(`https://api.alquran.cloud/v1/surah/1/uz.sodik`)
+  fetch(`https://api.alquran.cloud/v1/surah/${num}/uz.sodik`)
     .then(function (response) {
       return response.json();
     })
@@ -39,27 +41,25 @@ container.addEventListener("click", function (e) {
           <div class="child">
             <ion-icon class="close" name="close"></ion-icon>
             <div class="play"></div>
-            <p class="name">${data.englishName}</p>
-            
+            <p class="name">${data.englishName}</p> 
           </div>
           </div>`;
       document
         .querySelector(".container")
-        .insertAdjacentHTML("beforeBegin", getHtml);
-      fetch(`https://api.quran.sutanlab.id/surah/1`)
+        .insertAdjacentHTML("beforeEnd", getHtml);
+      fetch(`https://api.quran.sutanlab.id/surah/${num}`)
         .then(function (response) {
           return response.json();
         })
         .then(function (res) {
           let data2 = res.data;
           console.log(data2);
-          for (let i = 0; i < 7; i++) {
+          for (let i = 0; i < data2.verses.length; i++) {
             html1 = `<div class="text">
             <p class="arabcha">${data2.verses[i].text.arab}</p>
             <p class="oqilishi">${data2.verses[i].text.transliteration.en}</p>
               <p class="uzbek">${data.ayahs[i].text}</p>
             </div>`;
-            document.querySelector("body").style.display = "fixed";
 
             document
               .querySelector(".name")
@@ -67,16 +67,7 @@ container.addEventListener("click", function (e) {
             let close = document.querySelector(".close");
             close.addEventListener("click", function () {
               document.querySelector(".popup").remove();
-              document.querySelector(".container").style.display = "grid";
             });
-            document
-              .querySelector(".popup")
-              .addEventListener("click", function (e) {
-                let cls = e.target;
-                if (cls.classList.contains("child")) return;
-                document.querySelector(".popup").remove();
-                document.querySelector(".container").style.display = "grid";
-              });
           }
         });
     });

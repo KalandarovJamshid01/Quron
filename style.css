@@ -68,12 +68,8 @@ p {
   cursor: pointer;
 }
 .popup {
-  padding: 5rem;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0%;
+  padding: 3rem;
+  width: 100%;
   background-color: rgba(51, 51, 51, 0.794);
 }
 .child {
@@ -83,26 +79,56 @@ p {
   background-color: rgb(254, 221, 219);
   position: relative;
   overflow-y: scroll;
-  overflow-x: hidden;
 }
 .close {
   position: absolute;
-  top: -2rem;
-  right: -2rem;
+  top: 0;
+  right: 0;
   font-size: 3rem;
   padding: 1rem;
   border-radius: 50%;
   background-color: aqua;
+  z-index: 10;
 }
 .text {
   padding: 3rem 0.5rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1.2rem;
 }
 .name {
   padding: 2rem;
   font-weight: bold;
   font-size: 2.4rem;
   text-align: center;
+}
+.arabcha {
+  align-self: flex-end;
+  font-size: 3.6rem;
+  font-weight: 700;
+}
+.oqilishi {
+  align-self: flex-start;
+  font-weight: 300;
+  color: #222;
+  font-size: 2rem;
+  text-align: left;
+  line-height: 1.2;
+}
+
+.uzbek {
+  align-self: flex-start;
+  font-size: 1.9rem;
+  font-weight: 550;
+  color: #111;
+  text-align: left;
+  line-height: 1.2;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+.gridcol {
+  display: grid;
+  grid-template-columns: 1fr;
 }
