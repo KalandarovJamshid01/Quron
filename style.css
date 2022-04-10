@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  font-size: 62.5%;
+}
 body {
   font-family: serif;
   background-color: #eee;
@@ -25,12 +28,12 @@ body {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 30px;
-  padding: 30px 0;
+  gap: 3rem;
+  padding: 3rem 0;
 }
 h1 {
   text-align: center;
-  padding: 24px;
+  padding: 2.4rem;
 }
 .sura {
   background-image: linear-gradient(
@@ -38,41 +41,68 @@ h1 {
     rgb(161, 249, 255),
     rgb(3, 170, 211)
   );
-  border-radius: 20px;
+  border-radius: 2rem;
   border: none;
-  box-shadow: 5px 5px 10px #333;
+  box-shadow: 0.5rem 0.5rem 1rem #333;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  row-gap: 30px;
+  row-gap: 3rem;
 
-  padding: 30px 30px;
+  padding: 3rem;
 }
 p {
-  font-size: 18px;
+  font-size: 1.8rem;
 }
 .listen {
   text-decoration: none;
   grid-column: 1 / 4;
   width: 100%;
-  padding: 10px 10px 10px 8px;
+  padding: 1rem 1rem 1rem 0.8rem;
   border: none;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 500;
   color: aqua;
   background-color: black;
-  border-radius: 10px;
+  border-radius: 1.7rem;
   text-align: center;
   cursor: pointer;
 }
 .popup {
-  padding: 50px;
+  padding: 5rem;
   width: 100vw;
   height: 100vh;
   position: fixed;
   top: 0;
   left: 0%;
+  background-color: rgba(51, 51, 51, 0.794);
 }
 .child {
-  width: 80%;
+  width: 90%;
+  height: 100%;
   margin: 0 auto;
+  background-color: rgb(254, 221, 219);
+  position: relative;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.close {
+  position: absolute;
+  top: -2rem;
+  right: -2rem;
+  font-size: 3rem;
+  padding: 1rem;
+  border-radius: 50%;
+  background-color: aqua;
+}
+.text {
+  padding: 3rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.name {
+  padding: 2rem;
+  font-weight: bold;
+  font-size: 2.4rem;
+  text-align: center;
 }
