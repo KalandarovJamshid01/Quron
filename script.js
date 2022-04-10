@@ -88,6 +88,9 @@ container.addEventListener("click", function (e) {
             let close = document.querySelector(".close");
             close.addEventListener("click", function () {
               document.querySelector(".popup").remove();
+              sura.classList.remove("color");
+              container.classList.remove("gridcol");
+              big.classList.remove("grid");
             });
           }
         });
