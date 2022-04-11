@@ -47,12 +47,12 @@ h1 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   row-gap: 3rem;
+  transition: all 0.5s;
 
   padding: 3rem;
 }
 .sura:hover {
   transform: scale(1.05);
-  transition: all 0.5s;
   box-shadow: 1rem 1rem 2rem #333;
   background-image: linear-gradient(
     to right bottom,
@@ -76,10 +76,9 @@ p {
   border-radius: 1.7rem;
   text-align: center;
   cursor: pointer;
+  transition: all 0.5s;
 }
 .listen:hover {
-  transition: all 0.5s;
-
   color: red;
   box-shadow: 0.5rem 0.5rem 1rem #333;
 }
@@ -88,7 +87,7 @@ p {
   padding: 2rem;
   border-radius: 1rem;
   margin: 0 auto;
-  background-color: rgb(254, 221, 219);
+  background-color: rgb(253, 230, 229);
   position: relative;
   overflow-y: scroll;
   box-shadow: 0.5rem 0.5rem 1rem #333;
@@ -97,6 +96,13 @@ p {
   background-color: black;
 }
 .color {
+  background-image: linear-gradient(
+    to right bottom,
+    rgb(254, 221, 219),
+    rgb(254, 221, 219)
+  );
+}
+.color:hover {
   background-image: linear-gradient(
     to right bottom,
     rgb(254, 221, 219),
@@ -113,10 +119,11 @@ p {
   background-color: black;
   z-index: 10;
   color: rgb(254, 221, 219);
+  transition: all 0.3s;
+  cursor: pointer;
 }
 .close:hover {
   background-color: red;
-  transition: all 0.5s;
 }
 .text {
   padding: 3rem 0.5rem;
@@ -170,4 +177,10 @@ p {
 }
 .btnCol {
   color: rgb(254, 221, 219);
+}
+.scale {
+  transform: scale(0.8);
+}
+.scale:hover {
+  transform: scale(0.9);
 }

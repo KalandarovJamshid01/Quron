@@ -17,7 +17,7 @@ fetch("https://api.quran.sutanlab.id/surah")
     <p class="juz">${data[i].name.translation.en}</p>
     <p class="number">Surah:${data[i].number}</p>
     <p class="oyatNum">Oyat:${data[i].numberOfVerses}</p>
-    <p class="city">Mesto:${data[i].revelation.en}</p>
+    <p class="city">Revealation:${data[i].revelation.en}</p>
     <a id="${data[i].number}" class="listen">Listen and Read</a>
   </div>`;
       document
@@ -31,6 +31,9 @@ container.addEventListener("click", function (e) {
   bpop.innerHTML = "";
   let sura = btn.closest(".sura");
   sura.classList.add("color");
+  document
+    .querySelectorAll(".sura")
+    .forEach((val) => val.classList.add("scale"));
   let arr = [];
   let nextSibling = sura.nextElementSibling;
   let previousSibling = sura.previousElementSibling;
@@ -61,7 +64,7 @@ container.addEventListener("click", function (e) {
     })
     .then(function (res) {
       let data = res.data;
-      // console.log(data);
+      console.log(data);
       let getHtml = `<div class="popup">         
             <ion-icon class="close" name="close"></ion-icon>
             <div class="play"></div>
